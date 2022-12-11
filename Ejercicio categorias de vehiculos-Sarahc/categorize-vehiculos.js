@@ -1,53 +1,108 @@
-function categorizeVehiculo(dataInformacion, category) { 
+const vehicle1 {
+    caracteristicas: {
 
-	if(!category){
-		console.error('Category not indroduced')
-		return;
-	}
-
-	const vehiculoList = document.getElementById('vehiculo-list');
-	
-	const vehiculoNode = document.createElement('div');
-	bookNode.classList.add('book');
-
-	const titleNode = document.createElement('span');
-	titleNode.innerHTML = vehiculoTitle;
-
-	const categoryNode = document.createElement('strong');
-	categoryNode.innerHTML = category;
-	
-	vehiculoNode.appendChild(titleNode);
-	vehiculoNode.appendChild(categoryNode);
-
-	vehiculoList.prepend(bookNode);
+        numeroRuedas: 4,
+        numeroPuertas: 3,5,
+        velocidadMaxina: >100,
+    }
+    
 }
 
-window.addEventListener('load', () => {
+const vehicle2 {
+    caracteristicas: {
 
+        velocidadMaxina: >80,
 
-	document.getElementById('categorize').addEventListener('click', () => {
-		const vehiculoTitle = document.getElementById('vehiculotitle').value;
-		const vehiculoTitletoLowerCase = vehiculoTitle.toLowerCase()
-		console.log(vehiculoTitle);
-		
-			
-		 if (vehiculoTitletoLowerCase.includes('3 ruedas ')||vehiculoTitletoLowerCase.includes(' 5 ruedas ')||bookTitletoLowerCase.includes('pato')||bookTitletoLowerCase.includes('pollo')){
-			categorizeVehiculo(vehiculoTitle,"coche");
-			return;
-			
-		}
-			if (bookTitletoLowerCase.includes('recetas')||bookTitletoLowerCase.includes('cocinar')||bookTitletoLowerCase.includes('asar')){
-			categorizeBook(bookTitle,"Cocina"); 
-			return;
-			
-		}
-		
-			categorizeBook(bookTitle, 'otros');
-		
+    }
+}
 
-		
-			
+const vehicle3 {
+    caracteristicas: {
 
+        velocidadMaxina: 50,
+    }
+}
 
-	})
-});
+const vehicle4 {
+    caracteristicas: {
+
+        velocidadMaxina: 40,
+    }
+}
+
+const vehicle5 {
+    caracteristicas: {
+
+        motorizedVehicles: true,
+    }
+}
+
+function vehicleType (vehicle) {
+    // si el numero de ruedas es 2, es una moto,patinete eletronico o bicicleta si no, un coche 
+    if (vehicle.caracteristicas.numeroRuedas === 2) {
+       
+        return 'moto'| 'patinete eletronico'| 'bicicleta'
+
+    }else {
+        return 'coche '
+    }
+}
+
+function vehicleType (vehicle) {
+    //si el numero de puertas es 3 o 5, es un coche si no, una moto, un patienete eletronico o una bicicleta 
+    if (vehicle.caracteristicas.numeroPuertas === 3,5) {
+        
+        return 'coche'
+
+    }else {
+
+        return 'moto'| 'patinete eletronico'| 'bicicleta'
+    }
+}
+
+function vehicleType (vehicle) {
+    // si la velocidad maxina es mayor de 100 km/h, es coche 
+
+    if (vehicle.caracteristicas.velocidadMaxina === >100) {
+        
+        return 'coche'
+    }
+}
+
+function vehicleType (vehicle) {
+    // si la velocidad maxina es mayor de 80 km/h, es moto 
+
+    if (vehicle.caracteristicas.velocidadMaxina === >80) {
+
+        return  'moto'
+    }
+    
+}
+
+function vehicleType (vehicle) {
+    // si la velocidad maxina es 40km/h, es patinete eletronico
+
+    if (vehicle.caracteristicas.velocidadMaxina === 40) {
+
+        return 'patinete eletronico'
+    }
+}
+
+function vehicle (vehicle) {
+    // si la velocidad maxina es 50km/h, es bicicleta 
+
+    if (vehicle.caracteristicas.velocidadMaxina === 50) {
+
+        return 'bicicleta'
+    }
+}
+
+function vehicle (vehicle) {
+
+    if (vehicle.caracteristicas.motorizedVehicles === true) {
+
+        return 'coche' |'moto'
+    }else {
+        return 'bicicleta'| 'patinete eletronico'
+    }
+}
